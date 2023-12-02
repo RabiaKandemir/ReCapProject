@@ -21,12 +21,17 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
+            if (car.Name.Length <= 3 ||car.DailyPrice < 0)
+            {
+                throw new Exception("Not saved");
+            }
             _carDal.Add(car);
+
         }
 
         public void Delete(Car car)
         {
-           _carDal.Delete(car);
+            _carDal.Delete(car);
         }
 
         public List<Car> GetAll()
@@ -34,9 +39,9 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<Car> GetById(int brandId)
+        public List<Car> GetByIdBrand(int brandId)
         {
-            return _carDal.GetById(brandId);
+            return _carDal.GetAll(c => c.BrandId == brandId);
         }
 
         public void Update(Car car)
