@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace Entities.Concrete
         public DateTime ModelYear { get; set; }
         public decimal DailyPrice { get; set; }
         public string Description { get; set; }
-        public List<Brand> Brands { get; set; }
-        public List<Color> Colors { get; set; }
+        //public List<Brand> Brands { get; set; }
+        //public List<Color> Colors { get; set; }
     }
 }
